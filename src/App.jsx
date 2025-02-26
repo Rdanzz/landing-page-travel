@@ -110,7 +110,7 @@ export default function App() {
                 promos.
               </p>
               <div className="flex flex-col md:flex-row justify-center lg:justify-start gap-6">
-                <button className="py-6 px-8 bg-blue-600 rounded-full text-white drop-shadow-sm-shadow text-sm font-bold">
+                <button className="py-6 px-8 bg-blue-600 rounded-full text-white text-sm font-bold">
                   Get started
                 </button>
                 <button className="py-6 px-8 bg-white rounded-full border border-blue-500 drop-shadow-sm text-sm font-bold flex justify-center items-center gap-2">
