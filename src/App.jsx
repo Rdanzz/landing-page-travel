@@ -1,5 +1,12 @@
 import { useState } from "react";
 import logo from "./assets/logo.png";
+import hero from "./assets/hero.png";
+import traveloka from "./assets/Traveloka.svg";
+import booking from "./assets/Booking.svg";
+import tiket from "./assets/tiket.com.svg";
+import tripad from "./assets/Tripadvisor.svg";
+import vector from "./assets/Vector.svg";
+import Music from "./assets/Music.svg";
 import { CiMenuBurger } from "react-icons/ci";
 import { BiBookAlt, BiLoader, BiMale } from "react-icons/bi";
 import { IoHomeOutline } from "react-icons/io5";
@@ -60,7 +67,7 @@ export default function App() {
 
           {/* Bottom Navigation (with motion) */}
           {showNavigations && (
-            <div className="fixed bottom-0 right-0 left-0 p-4 border">
+            <div className="fixed bottom-0 right-0 left-0 p-4 border backdrop-blur-sm bg-white bg-opacity-30">
               <motion.ul
                 className="flex justify-between"
                 initial={{ opacity: 0, y: 20 }}
@@ -85,6 +92,38 @@ export default function App() {
           )}
         </div>
       </nav>
+
+      <section className="lg:px-28 py-16 lg:py-16 md:px-4">
+        <div className="grid grid-cols-12">
+          <div className="lg:col-span-6 col-span-12 order-2 lg:order-1">
+            <div className="my-8">
+              <button className="px-8 py-4 bg-white text-pink-400 flex gap-2 text-sm font-bold drop-shadow-sm-shadow rounded-full mx-auto lg:mx-0">
+                Explore the World!
+                <img src={vector} alt="vector" />
+              </button>
+              <h1 className="font-bold lg:text-start lg:text-[69px] text-[40px] md:text-[52px] text-center mt-4 mb-6 md:mb-[43px] md:mt-[43px] ">
+                From Southeast Asia{" "}
+                <span className="text-pink-400">to the World.</span>
+              </h1>
+              <p className="text-gray-400 text-center lg:w-full lg:text-start md:text-[18px] md:mb-[43px] w-3/4 mx-auto text-base mb-8">
+                Stay updated with travel tips, recommendations, and latest
+                promos.
+              </p>
+              <div className="flex flex-col md:flex-row justify-center lg:justify-start gap-6">
+                <button className="py-6 px-8 bg-blue-600 rounded-full text-white drop-shadow-sm-shadow text-sm font-bold">
+                  Get started
+                </button>
+                <button className="py-6 px-8 bg-white rounded-full border border-blue-500 drop-shadow-sm text-sm font-bold flex justify-center items-center gap-2">
+                  <img src={Music} alt="Music" className="w-6 h-6" /> Watch Demo
+                </button>
+              </div>
+            </div>
+          </div>
+          <div className="lg:col-span-6 col-span-12 order-1">
+            <img src={hero} alt="Hero" className="w-full" />
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
