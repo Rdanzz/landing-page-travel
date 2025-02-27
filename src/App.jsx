@@ -5,8 +5,12 @@ import traveloka from "./assets/Traveloka.svg";
 import booking from "./assets/Booking.svg";
 import tiket from "./assets/tiket.com.svg";
 import tripad from "./assets/Tripadvisor.svg";
+import airbnb from "./assets/Airbnb.svg";
 import vector from "./assets/Vector.svg";
 import Music from "./assets/Music.svg";
+import koper from "./assets/koper.svg";
+import dompet from "./assets/dompet.svg";
+import buku from "./assets/buku.svg";
 import { CiMenuBurger } from "react-icons/ci";
 import { BiBookAlt, BiLoader, BiMale } from "react-icons/bi";
 import { IoHomeOutline } from "react-icons/io5";
@@ -14,6 +18,7 @@ import { TbDoorExit } from "react-icons/tb";
 import Navigation from "./components/Navigation";
 import LoginSign from "./components/LoginSign";
 import { motion } from "framer-motion";
+import Services from "./components/Services";
 
 export default function App() {
   const [showNavigations, setShowNavigations] = useState(false);
@@ -29,18 +34,27 @@ export default function App() {
 
   return (
     <div>
+      {/* Navigation */}
       <nav className="py-6 px-4">
         <div className="lg:mx-24">
           <div className="flex justify-between items-center">
             {/* Logo */}
-            <img className="w-32 order-1 sm:order-2" src={logo} alt="Logo" />
+            <img className="w-32" src={logo} alt="Logo" />
 
             <div className="order-2 hidden lg:block">
               <ul className="flex gap-16 text-gray-500">
-                <li>Home</li>
-                <li>Discover</li>
-                <li>Special</li>
-                <li>Contact</li>
+                <li className="cursor-pointer relative transition-all duration-800 ease-in-out hover:-translate-y-2  hover:text-blue-800">
+                  Home
+                </li>
+                <li className="cursor-pointer relative transition-all duration-800 ease-in-out hover:-translate-y-2  hover:text-blue-800">
+                  Discover
+                </li>
+                <li className="cursor-pointer relative transition-all duration-800 ease-in-out hover:-translate-y-2  hover:text-blue-800">
+                  Special
+                </li>
+                <li className="cursor-pointer relative transition-all duration-800 ease-in-out hover:-translate-y-2  hover:text-blue-800">
+                  Contact
+                </li>
               </ul>
             </div>
 
@@ -55,7 +69,7 @@ export default function App() {
             </div>
 
             {/* Button Login and SignUp (Hidden on small screens) */}
-            <div className="order-3 hidden sm:block">
+            <div className="order-3 lg:block hidden">
               <button className="grow bg-white px-8 py-4 font-semibold rounded-full text-sm">
                 Login
               </button>
@@ -93,6 +107,7 @@ export default function App() {
         </div>
       </nav>
 
+      {/* Section Hero */}
       <section className="lg:px-28 py-16 lg:py-16 md:px-4">
         <div className="grid grid-cols-12">
           <div className="lg:col-span-6 col-span-12 order-2 lg:order-1">
@@ -121,6 +136,56 @@ export default function App() {
           </div>
           <div className="lg:col-span-6 col-span-12 order-1">
             <img src={hero} alt="Hero" className="w-full" />
+          </div>
+        </div>
+        <div className="col-span-12 py-8 lg:py-28">
+          <div className="flex justify-center gap-6 sm:gap-7 lg:justify-between flex-wrap">
+            <div>
+              <img className="h-5 sm:h-8" src={traveloka} alt="" />
+            </div>
+            <div>
+              <img className="h-5 sm:h-8" src={tiket} alt="" />
+            </div>
+            <div>
+              <img className="h-5 sm:h-8" src={booking} alt="" />
+            </div>
+            <div>
+              <img className="h-5 sm:h-8" src={tripad} alt="" />
+            </div>
+            <div>
+              <img className="h-5 sm:h-8" src={airbnb} alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section Services */}
+      <section className="lg:px-28 py-16 lg:py-16 md:px-4">
+        <div className="lg:text-start text-center px-3">
+          <div>
+            <span className="font-bold text-2xl text-pink-600 leading-tight">
+              S E R V I C E S
+            </span>
+            <h1 className="font-bold leading-tight text-5xl">
+              Why book Travelo
+            </h1>
+          </div>
+          <div className="grid grid-cols-12 py-16 gap-6">
+            <Services
+              src={koper}
+              label="All You Needs"
+              desc="From flights, stays, to sights, just count on our complete products."
+            />
+            <Services
+              src={buku}
+              label="Flexible Booking"
+              desc="From flights, stays, to sights, just count on our complete products."
+            />
+            <Services
+              src={dompet}
+              label="Secure Payments"
+              desc="From flights, stays, to sights, just count on our complete products."
+            />
           </div>
         </div>
       </section>
